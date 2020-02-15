@@ -28,16 +28,26 @@ class Calc extends React.Component {
     };
   }
 
+  handleClick(i) {
+    this.i = i;
+    this.setState((state, i) => ({
+      value: state.value + i
+    }));
+  }
+
   renderButton(i) {
-    return <Button
-      value={i}
-    />
+    return (
+      <Button
+        value={i}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
     return (
       <div className="calc">
-        <Window value={this.state.value}/>
+        <Window value={this.state.value} />
         <div>
           <div className="rowsAll">
             <div className="rowPress">
@@ -67,7 +77,7 @@ class Calc extends React.Component {
             <div className="rowPress">
               {this.renderButton("+/-")}
               {this.renderButton(0)}
-              {this.renderButton(",")}
+              {this.renderButton(".")}
               {this.renderButton("=")}
             </div>
           </div>
