@@ -11,4 +11,4 @@ Next start the live server:
 ```
 npm run start
 ```
-Every script is defined in package.json file.
+Each script is defined in package.json file.
